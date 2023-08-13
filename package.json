@@ -1,0 +1,20 @@
+{
+  "name": "ts-base",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node ./dist/main.js",
+    "dev": "tsx watch ./src/main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "mulf",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "18.17",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.6"
+  }
+}
