@@ -21,7 +21,6 @@ npm install
 - **build**: Compile the TypeScript files to JavaScript using `tsc`.
 - **start**: Build and then run the application.
 - **dev**: Watch for changes in your TypeScript files and rebuild using `tsx watch ./src/main.ts`.
-- **test**: Run the test command (Note: no test specified).
 
 ## Dependencies
 
