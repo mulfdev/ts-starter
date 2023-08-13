@@ -1,8 +1,7 @@
 {
-  "name": "ts-base",
+  "name": "ts-starter",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "build": "tsc",
     "start": "tsc && node ./dist/main.js",
@@ -11,7 +10,7 @@
   },
   "keywords": [],
   "author": "mulf",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "18.17",
     "tsx": "^3.12.7",
