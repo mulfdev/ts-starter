@@ -6,7 +6,7 @@ Author: mulf
 
 ## Description
 
-This package serves as a TypeScript starter kit. It includes strict type checking and a reasonably recent compilation target (es2020)
+This package serves as a TypeScript starter kit. It includes strict type checking and a reasonably recent compilation target (es2020). It is intended to be used with Node.js at LTS version 18.x.
 
 ## Installation
 
