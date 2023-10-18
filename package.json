@@ -2,6 +2,7 @@
   "name": "ts-starter",
   "version": "1.0.1",
   "description": "",
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "start": "tsc && node ./dist/main.js",
