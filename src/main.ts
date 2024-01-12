@@ -29,17 +29,11 @@ async function getContractEvents() {
         strict: true,
       });
 
-      for (const { eventName, args, transactionHash } of logs) {
+      for (const { eventName, args, transactionHash, blockNumber } of logs) {
+        console.log(`processed block #: ${blockNumber}`);
+
         switch (eventName) {
           case "ProposalCreated": {
-            console.log("prop inserted: ");
-            console.log({
-              id: args.id,
-              proposer: args.proposer,
-              endblock: args.endBlock,
-              desc: args.description?.substring(0, 250),
-            });
-
             await db.insert(proposals).values({
               id: Number(args.id),
               description: args.description,
@@ -52,7 +46,6 @@ async function getContractEvents() {
           }
 
           case "VoteCast": {
-            console.log({ args });
             await db.insert(votes).values({
               id: nanoid(),
               voter: args.voter as string,
@@ -66,11 +59,12 @@ async function getContractEvents() {
           }
 
           case "ProposalExecuted": {
-            console.log(Number(args.id), "prop executed");
             await db
               .update(proposals)
               .set({ executed: true })
               .where(eq(proposals.id, Number(args.id)));
+
+            break;
           }
 
           default: {
@@ -86,7 +80,7 @@ async function getContractEvents() {
         break;
       }
 
-      await sleep(50);
+      await sleep(20);
     } catch (e: unknown) {
       console.log({ e });
       sqlite.close();
