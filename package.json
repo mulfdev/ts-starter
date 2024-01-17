@@ -7,9 +7,10 @@
     "build": "tsc",
     "start": "tsc && node ./dist/main.js",
     "dev": "tsx watch ./src/main.ts",
-    "migrate": "npx drizzle-kit generate:sqlite",
-    "push": "npx drizzle-kit push:sqlite",
-    "db:reset": "mv ./src/db/sqlite.db ./src/db/old.db && pnpm migrate && pnpm push"
+    "migrate": "pnpm dlx drizzle-kit generate:sqlite",
+    "push": "pnpm dlx drizzle-kit push:sqlite",
+    "db:reset": "mv ./src/db/sqlite.db ./src/db/old.db && pnpm migrate && pnpm push",
+    "export": "tsx ./src/scripts/exportData.ts"
   },
   "keywords": [],
   "author": "mulf",

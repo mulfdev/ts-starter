@@ -1,7 +1,7 @@
 import { eq } from "drizzle-orm";
 import { nanoid } from "nanoid";
-import { db, proposals, votes, sqlite } from "./db/schema.js";
-import { publicClient, sleep } from "./utils.js";
+import { proposals, votes } from "./db/schema.js";
+import { db, publicClient, sleep, sqlite } from "./utils.js";
 import { nounsAbi } from "./abis/nouns.js";
 async function getContractEvents() {
   /*  
@@ -29,9 +29,7 @@ async function getContractEvents() {
         strict: true,
       });
 
-      for (const { eventName, args, transactionHash, blockNumber } of logs) {
-        console.log(`processed block #: ${blockNumber}`);
-
+      for (const { eventName, args } of logs) {
         switch (eventName) {
           case "ProposalCreated": {
             await db.insert(proposals).values({
@@ -68,7 +66,6 @@ async function getContractEvents() {
           }
 
           default: {
-            console.log("Untracked event", transactionHash);
           }
         }
       }
@@ -79,7 +76,7 @@ async function getContractEvents() {
         await sqlite.close();
         break;
       }
-
+      console.log("  BLOCK NUM:  " + toBlock);
       await sleep(20);
     } catch (e: unknown) {
       console.log({ e });
