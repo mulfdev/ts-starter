@@ -16,5 +16,10 @@
         "@types/node": "^20",
         "tsx": "^4.19.2",
         "typescript": "^5.7.2"
+    },
+    "dependencies": {
+        "@libsql/client": "^0.14.0",
+        "dotenv": "^16.4.7",
+        "viem": "^2.21.54"
     }
 }
