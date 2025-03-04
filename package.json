@@ -13,8 +13,9 @@
     "author": "mulf",
     "license": "MIT",
     "devDependencies": {
-        "@types/node": "^22",
+        "@types/node": "^20",
+        "prettier": "^3.5.3",
         "tsx": "^4.19.2",
-        "typescript": "^5.7.2"
+        "typescript": "^5.8.2"
     }
 }
