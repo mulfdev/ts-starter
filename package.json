@@ -7,13 +7,15 @@
         "build": "tsc",
         "start": "tsc && node ./dist/main.js",
         "dev": "tsx watch ./src/main.ts",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint ."
     },
     "keywords": [],
     "author": "mulf",
     "license": "MIT",
     "devDependencies": {
-        "@types/node": "^20",
+        "@eslint/js": "^9.24.0",
+        "@types/node": "^22",
         "@typescript-eslint/eslint-plugin": "^8.29.1",
         "@typescript-eslint/parser": "^8.29.1",
         "eslint": "^9.24.0",
@@ -21,5 +23,8 @@
         "prettier": "^3.5.3",
         "tsx": "^4.19.2",
         "typescript": "^5.8.2"
+    },
+    "dependencies": {
+        "typescript-eslint": "^8.30.0"
     }
 }
