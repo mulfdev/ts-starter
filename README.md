@@ -26,9 +26,9 @@ npm install
 
 ### Development
 
-- TypeScript: `^5.1.6`
+- TypeScript: `^5.8`
 - tsx: `^3.12.7`
-- @types/node: `18.17`
+- @types/node: `^22`
 
 ## License
 
