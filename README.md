@@ -1,10 +1,5 @@
 # ts-starter
 
-Version: 1.0.0
-
-Author: mulf
-
-## Description
 
 This package serves as a TypeScript starter kit. It includes strict type checking and a reasonably recent compilation target (es2020). It is intended to be used with Node.js at LTS version 18.x.
 
@@ -27,7 +22,7 @@ npm install
 ### Development
 
 - TypeScript: `^5.8`
-- tsx: `^3.12.7`
+- tsx: `^4.19`
 - @types/node: `^22`
 
 ## License
